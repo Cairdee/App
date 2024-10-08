@@ -54,7 +54,17 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-  - assets/profile_user.png
+  - assets/iconflight.png
+  - assets/booking.png
+  - assets/user.png
+  - assets/boy.png
+  - assets/rajaampat.jpg
+  - assets/danautoba.jpg
+  - assets/gunungbromo.jpg
+  - assets/pulaukomodo.jpg
+  - assets/stasiunkereta.jpg
+  - assets/kapal.jpg
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

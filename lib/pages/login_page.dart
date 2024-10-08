@@ -9,7 +9,13 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text(
+          'Login',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color(0xFF101828),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,16 +39,22 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                if (usernameController.text == 'Jojo' && passwordController.text == 'Jojo') {
-                  Get.offNamed('/home'); 
-                } else {
-                  Get.snackbar('Login Failed', 'Invalid username or password');
-                }
-              },
-              child: Text('Login'),
-            ),
+ElevatedButton(
+  onPressed: () {
+    // Validasi username dan password
+    if (usernameController.text == 'Jojo' && passwordController.text == 'Jojo') {
+      Get.offNamed('/main'); // Arahkan ke rute yang benar
+    } else {
+      Get.snackbar('Login Failed', 'Invalid username or password');
+    }
+  },
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.blue, // Ubah warna latar belakang
+    foregroundColor: Colors.white, // Ubah warna teks
+  ),
+  child: Text('Login'),
+),
+
           ],
         ),
       ),

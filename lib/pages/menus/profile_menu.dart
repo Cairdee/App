@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:project6/pages/nav_drawer.dart';
+import 'package:get/get.dart';
 
 class ProfileMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Profile')),
-      drawer: NavDrawer(), // Navigation Drawer
-      body: Padding(
+      appBar: AppBar(
+        title: Text(
+          'Profile',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color(0xFF101828),
+      ),
+      body: SingleChildScrollView( // Tambahkan SingleChildScrollView
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -15,7 +22,7 @@ class ProfileMenu extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/profile_user.png'), 
+              backgroundImage: AssetImage('assets/boy.png'),
             ),
             SizedBox(height: 16),
             Text(
@@ -31,7 +38,7 @@ class ProfileMenu extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.phone),
-              title: Text('Nomer Telefon'),
+              title: Text('Nomor Telefon'),
               subtitle: Text('+62 821 4729 6071'),
             ),
             ListTile(
@@ -39,13 +46,18 @@ class ProfileMenu extends StatelessWidget {
               title: Text('Alamat'),
               subtitle: Text('Jln.Gebog,Kudus,Jawa Tengah'),
             ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Implementasi edit profile atau fitur lainnya
-              },
-              child: Text('Edit Profile'),
-            ),
+        SizedBox(height: 16),
+ElevatedButton(
+  onPressed: () {
+    Get.offAllNamed('/login');
+  },
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.blue, // Ubah warna latar belakang
+    foregroundColor: Colors.white, // Ubah warna teks
+  ),
+  child: Text('Logout'),
+),
+
           ],
         ),
       ),
