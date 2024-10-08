@@ -1,4 +1,3 @@
-// home_content.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,19 +14,19 @@ class HomeContent extends StatelessWidget {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              Get.toNamed('/pesawat'); // Navigasi ke halaman Pesawat
+              Get.toNamed('/pesawat'); 
             },
             child: Text('Pesawat Tickets'),
           ),
           ElevatedButton(
             onPressed: () {
-              Get.toNamed('/kapal'); // Navigasi ke halaman Kapal
+              Get.toNamed('/kapal'); 
             },
             child: Text('Kapal Tickets'),
           ),
           ElevatedButton(
             onPressed: () {
-              Get.toNamed('/kereta'); // Navigasi ke halaman Kereta
+              Get.toNamed('/kereta'); 
             },
             child: Text('Kereta Tickets'),
           ),

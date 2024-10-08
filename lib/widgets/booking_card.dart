@@ -36,7 +36,6 @@ class BookingCard extends StatelessWidget {
                 Text('Status: $status'),
                 ElevatedButton(
                   onPressed: () {
-                    // Implement view details logic here
                   },
                   child: Text('View Details'),
                 ),

@@ -2,15 +2,15 @@ import 'package:get/get.dart';
 
 class NavController extends GetxController {
   void goToLogin() {
-    Get.offAllNamed('/login'); // Navigate to Login Page
+    Get.offAllNamed('/login');
   }
 
   void goToHome() {
-    Get.offAllNamed('/main'); // Go to the Bottom Navigation controller (main section)
+    Get.offAllNamed('/main'); 
   }
 
   void goToPesawat() {
-    Get.toNamed('/pesawat'); // Example of navigating to a specific ticket type page
+    Get.toNamed('/pesawat'); 
   }
 
   void goToKapal() {

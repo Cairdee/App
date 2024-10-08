@@ -20,7 +20,7 @@ class KapalPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Pesawat 1
+             
               Image.asset(
                 'assets/kapal.jpg', // Ganti dengan jalur gambar aset
                 height: 200,
@@ -66,7 +66,6 @@ class KapalPage extends StatelessWidget {
               ),
               SizedBox(height: 16),
 
-              // Pesawat 2
               Image.asset(
                 'assets/kapal.jpg', // Ganti dengan gambar yang berbeda
                 height: 200,

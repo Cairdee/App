@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:project6/pages/menus/booking_menu.dart';
 import 'package:project6/pages/menus/home_menu.dart';
 import 'package:project6/pages/menus/profile_menu.dart';

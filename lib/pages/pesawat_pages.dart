@@ -6,7 +6,7 @@ class PesawatPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
   iconTheme: IconThemeData(
-    color: Colors.white, // Ubah warna panah kembali menjadi putih
+    color: Colors.white, 
   ),
   title: Text(
     'Pesawat',
@@ -14,15 +14,15 @@ class PesawatPage extends StatelessWidget {
   ),
   backgroundColor: Color(0xFF101828),
 ),
-      body: SingleChildScrollView( // Supaya bisa di-scroll jika konten banyak
+      body: SingleChildScrollView( 
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Pesawat 1
+
               Image.asset(
-                'assets/rajaampat.jpg', // Ganti dengan jalur gambar aset
+                'assets/rajaampat.jpg', 
                 height: 200,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -67,9 +67,9 @@ class PesawatPage extends StatelessWidget {
               ),
               SizedBox(height: 16),
 
-              // Pesawat 2
+
               Image.asset(
-                'assets/danautoba.jpg', // Ganti dengan gambar yang berbeda
+                'assets/danautoba.jpg', 
                 height: 200,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -115,7 +115,7 @@ class PesawatPage extends StatelessWidget {
               SizedBox(height: 16),
 
                Image.asset(
-                'assets/gunungbromo.jpg', // Ganti dengan gambar yang berbeda
+                'assets/gunungbromo.jpg', 
                 height: 200,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -161,7 +161,7 @@ class PesawatPage extends StatelessWidget {
               SizedBox(height: 16),
 
                 Image.asset(
-                'assets/pulaukomodo.jpg', // Ganti dengan gambar yang berbeda
+                'assets/pulaukomodo.jpg', 
                 height: 200,
                 width: double.infinity,
                 fit: BoxFit.cover,
