@@ -12,6 +12,7 @@ class HomeMenu extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Color(0xFF101828),
+        automaticallyImplyLeading: false,
       ),
       body: HomeContent(), 
     );

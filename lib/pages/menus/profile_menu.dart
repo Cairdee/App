@@ -16,6 +16,7 @@ class ProfileMenu extends StatelessWidget {
           ),
         ),
         backgroundColor: Color(0xFF101828),
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),

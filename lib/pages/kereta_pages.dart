@@ -1,210 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:project6/widgets/booking_card.dart';
 
 class KeretaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-  iconTheme: IconThemeData(
-    color: Colors.white, 
-  ),
-  title: Text(
-    'Kereta',
-    style: TextStyle(color: Colors.white),
-  ),
-  backgroundColor: Color(0xFF101828),
-),
-       body: SingleChildScrollView( 
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              Image.asset(
-                'assets/stasiunkereta.jpg', 
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Gambir - Bandung',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('4.0'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('100000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-
-              Image.asset(
-                'assets/stasiunkereta.jpg', 
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Malang - Cirebon',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('4.4'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('150000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-
-               Image.asset(
-                'assets/stasiunkereta.jpg', 
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Solo Balapan - Semarang Tawang',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('4.5'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('160000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-
-                Image.asset(
-                'assets/stasiunkereta.jpg', 
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Yogyakarta - Pasar Senen',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('3.9'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('200000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-
-              
-            ],
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Text('Kereta Ticket', style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF101828),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          BookingCard(
+            id: 1,
+            title: 'Train to Jakarta',
+            date: '15 Sept 2024',
+            time: '07:00 AM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
           ),
-        ),
+          BookingCard(
+            id: 2,
+            title: 'Train to Bandung',
+            date: '18 Sept 2024',
+            time: '09:30 AM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
+          ),
+          BookingCard(
+            id: 3,
+            title: 'Train to Yogyakarta',
+            date: '20 Sept 2024',
+            time: '11:15 AM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
+          ),
+          BookingCard(
+            id: 4,
+            title: 'Train to Surabaya',
+            date: '23 Sept 2024',
+            time: '04:00 PM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
+          ),
+        ],
       ),
     );
   }

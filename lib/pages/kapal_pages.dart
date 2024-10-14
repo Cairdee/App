@@ -1,208 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:project6/widgets/booking_card.dart';
 
 class KapalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
-  iconTheme: IconThemeData(
-    color: Colors.white, 
-  ),
-  title: Text(
-    'Kapal',
-    style: TextStyle(color: Colors.white),
-  ),
-  backgroundColor: Color(0xFF101828),
-),
-       body: SingleChildScrollView( // Supaya bisa di-scroll jika konten banyak
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-             
-              Image.asset(
-                'assets/kapal.jpg', // Ganti dengan jalur gambar aset
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Tanjung Priok - Tanjung Perak',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('4.1'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('50000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-
-              Image.asset(
-                'assets/kapal.jpg', // Ganti dengan gambar yang berbeda
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Belawan - Makassar',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('4.2'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('75000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-
-               Image.asset(
-                'assets/kapal.jpg', // Ganti dengan gambar yang berbeda
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Benoa - Bakauheni',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('4.3'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('100000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-
-                Image.asset(
-                'assets/kapal.jpg', // Ganti dengan gambar yang berbeda
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Gilimanuk - Merak',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber),
-                      Text('4.4'),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Harga per penumpang',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text('125000 Rp'),
-                ),
-              ),
-              SizedBox(height: 16),
-            ],
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Text('Kapal Ticket', style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF101828),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          BookingCard(
+            id: 1,
+            title: 'Trip to Bali',
+            date: '20 Sept 2024',
+            time: '09:00 AM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
           ),
-        ),
+          BookingCard(
+            id: 2,
+            title: 'Trip to Komodo',
+            date: '22 Sept 2024',
+            time: '11:30 AM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
+          ),
+          BookingCard(
+            id: 3,
+            title: 'Trip to Gili Trawangan',
+            date: '25 Sept 2024',
+            time: '02:00 PM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
+          ),
+          BookingCard(
+            id: 4,
+            title: 'Trip to Labuan Bajo',
+            date: '28 Sept 2024',
+            time: '05:30 PM',
+            showStatus: false,
+            showFavoriteIcon: true,
+            buttonText: 'Beli Sekarang',
+          ),
+        ],
       ),
     );
   }

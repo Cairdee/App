@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project6/bindings/profile_binding.dart';
 import 'package:project6/controller/bottom_nav_controller.dart';
+import 'package:project6/pages/favorite_page.dart';
 import 'package:project6/pages/kapal_pages.dart';
 import 'package:project6/pages/kereta_pages.dart';
 import 'package:project6/pages/login_page.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/login', page: () => LoginPage()),
         GetPage(name: '/home', page: () => HomeMenu()),
-        GetPage(name: '/bookings', page: () => BookingMenu()),
+        GetPage(name: '/bookings', page: () => BookingMenuPage()),
         GetPage(
           name: '/profile',
           page: () => ProfileMenu(),
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/kapal', page: () => KapalPage()),
         GetPage(name: '/kereta', page: () => KeretaPage()),
         GetPage(name: '/main', page: () => BottomNavController()),
+          GetPage(name: '/favorites', page: () => FavoritePage()),
       ],
     );
   }
