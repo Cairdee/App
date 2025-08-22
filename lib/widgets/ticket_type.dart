@@ -5,7 +5,8 @@ class TicketTypeCard extends StatefulWidget {
   final String title;
   final VoidCallback onTap;
 
-  const TicketTypeCard({required this.icon, required this.title, required this.onTap});
+  const TicketTypeCard(
+      {required this.icon, required this.title, required this.onTap});
 
   @override
   _TicketTypeCardState createState() => _TicketTypeCardState();

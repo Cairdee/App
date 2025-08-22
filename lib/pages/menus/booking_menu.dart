@@ -5,10 +5,11 @@ class BookingMenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
+      appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'My Booking',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color(0xFF101828),
         automaticallyImplyLeading: false,
@@ -22,8 +23,9 @@ class BookingMenuPage extends StatelessWidget {
             date: '15 Oct 2024',
             time: '09:00 AM',
             status: 'Confirmed',
-            showFavoriteIcon: false, 
-            showStatus: true, 
+            showFavoriteIcon: false,
+            transportType: 'pesawat',
+            showStatus: true,
           ),
           BookingCard(
             id: 2,
@@ -31,6 +33,7 @@ class BookingMenuPage extends StatelessWidget {
             date: '16 Oct 2024',
             time: '12:30 PM',
             status: 'Pending',
+            transportType: 'kapal',
             showFavoriteIcon: false, // Hide favorite icon
           ),
           BookingCard(
@@ -39,6 +42,7 @@ class BookingMenuPage extends StatelessWidget {
             date: '17 Oct 2024',
             time: '06:00 AM',
             status: 'Cancelled',
+            transportType: 'kereta',
             showFavoriteIcon: false, // Hide favorite icon
           ),
         ],

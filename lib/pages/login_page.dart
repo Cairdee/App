@@ -15,90 +15,107 @@ class LoginPage extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             child: Image.asset(
-              'assets/logintampilan.jpg', 
+              'assets/logintampilan.jpg',
               fit: BoxFit.cover,
+              color: Colors.black.withOpacity(0.4),
+              colorBlendMode: BlendMode.darken,
             ),
           ),
-          
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                
-                Text(
-                  'Flight BOOK',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(height: 32),
-                
-                TextField(
-                  controller: usernameController,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    labelStyle: TextStyle(color: Colors.grey),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.9),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 16),
 
-                TextField(
-                  controller: passwordController,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    labelStyle: TextStyle(color: Colors.grey),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.9),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  obscureText: true,
-                ),
-                SizedBox(height: 16),
-
-                ElevatedButton(
-                  onPressed: () {
-                    if (usernameController.text == 'Jojo' &&
-                        passwordController.text == 'Jojo') {
-                      Get.toNamed('/main'); 
-                    } else {
-                      Get.snackbar('Login Failed', 'Invalid username or password');
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue, 
-                    foregroundColor: Colors.white, 
-                    padding: EdgeInsets.symmetric(horizontal: 100, vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text('SUBMIT'),
-                ),
-                SizedBox(height: 16),
-
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed('/login');
-                  },
-                  child: Text(
-                    'Already have account? Login',
+          Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Title
+                  Text(
+                    'Cairde Flight',
                     style: TextStyle(
+                      fontSize: 42,
+                      fontWeight: FontWeight.bold,
                       color: Colors.white,
-                      decoration: TextDecoration.underline,
+                      letterSpacing: 2.0,
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 40),
+
+                  // Email TextField
+                  TextField(
+                    controller: usernameController,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      labelStyle: TextStyle(color: Colors.white),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.8),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      prefixIcon: Icon(Icons.email, color: Colors.grey),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  // Password TextField
+                  TextField(
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      labelStyle: TextStyle(color: Colors.white),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.8),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      prefixIcon: Icon(Icons.lock, color: Colors.grey),
+                    ),
+                    obscureText: true,
+                  ),
+                  SizedBox(height: 30),
+
+                  // Submit Button
+                  ElevatedButton(
+                    onPressed: () {
+                      if (usernameController.text == 'Jojo' &&
+                          passwordController.text == 'Jojo') {
+                        Get.toNamed('/main');
+                      } else {
+                        Get.snackbar('Login Failed', 'Invalid username or password',
+                            snackPosition: SnackPosition.BOTTOM);
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(horizontal: 100, vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      backgroundColor: Colors.blueAccent,
+                      shadowColor: Colors.black45,
+                      elevation: 5,
+                    ),
+                    child: Text(
+                      'LOGIN',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  // Register Prompt
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed('/register');
+                    },
+                    child: Text(
+                      'Don\'t have an account? Register here',
+                      style: TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
